@@ -1,7 +1,13 @@
 import React from 'react';
 
-function Expenses() {
-  return <div>Expenses</div>;
+import ExpenseChart from './ExpenseChart';
+
+function Expenses({ expenses }) {
+  return (
+    <div>
+      <ExpenseChart expenses={expenses} />
+    </div>
+  );
 }
 
 export default Expenses;
