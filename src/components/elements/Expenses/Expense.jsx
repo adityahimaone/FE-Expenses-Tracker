@@ -26,7 +26,6 @@ function Expenses({ expenses }) {
     expense.date.includes(filteredYear)
   );
 
-  console.log(filteredExpenses);
   return (
     <div>
       <div className="shadomax-w-lg relative my-4 flex flex-col items-center justify-center rounded-lg bg-slate-100 py-10">
@@ -48,7 +47,7 @@ function Expenses({ expenses }) {
           )}
         </div>
       </div>
-      <ExpenseChart expenses={expenses} />
+      <ExpenseChart expenses={filteredExpenses} />
       <ExpenseFilter
         filteredYear={filteredYear}
         onChangeFilter={handleFilterChange}

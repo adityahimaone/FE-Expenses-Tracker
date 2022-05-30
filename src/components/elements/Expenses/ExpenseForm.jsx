@@ -21,6 +21,13 @@ function ExpenseForm() {
     setForm({ ...form, [name]: value });
   };
 
+  const handleNumberChange = e => {
+    const { name } = e.target;
+    const { value } = e.target;
+
+    setForm({ ...form, [name]: parseInt(value, 10) });
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addExpense(form));
@@ -42,7 +49,7 @@ function ExpenseForm() {
       <div className="flex flex-col">
         <label htmlFor="amount">Amount</label>
         <input
-          onChange={handleChange}
+          onChange={handleNumberChange}
           id="amount"
           name="amount"
           type="number"
