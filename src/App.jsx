@@ -1,5 +1,6 @@
 import React from 'react';
 
+import WaveIMG from '@/assets/images/wave.svg';
 import Expenses from '@/components/elements/Expenses/Expense';
 import Layout from '@/components/layouts/DefaultLayout';
 
@@ -28,10 +29,19 @@ function App() {
 
   return (
     <Layout>
-      <div className="flex items-center justify-center rounded-lg bg-red-500 py-12 shadow-lg">
-        <h1 className="text-3xl font-medium text-white">Expenses Calculator</h1>
+      <div className="relative flex items-center justify-center overflow-clip rounded-lg bg-red-500 py-12 shadow-lg">
+        <div className="z-[2] flex flex-col text-center">
+          <h1 className=" text-3xl font-medium  text-white">
+            Expenses Tracker
+          </h1>
+          <p className="text-white">let&lsquo;s save your expenses</p>
+        </div>
+        <img
+          src={WaveIMG}
+          alt="wave img"
+          className="absolute bottom-0 z-[1] "
+        />
       </div>
-
       <div>
         <Expenses expenses={expenses} />
       </div>

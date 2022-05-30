@@ -13,7 +13,6 @@ function ExpensesItem({ id, title, amount, date }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
-    console.log(id);
     dispatch(deleteExpense(id));
   };
   return (
