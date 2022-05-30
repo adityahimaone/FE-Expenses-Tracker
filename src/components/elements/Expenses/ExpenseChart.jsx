@@ -2,10 +2,9 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 
-import expenses from '../../../context/expenses';
 import Chart from '../Chart/Chart';
 
-function ExpenseChart() {
+function ExpenseChart({ expenses }) {
   const chartsDataPoints = [
     {
       label: 'Jan',

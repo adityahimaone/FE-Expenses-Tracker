@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+// import nextId from 'react-id-generator';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialValue = {
   loading: false,
@@ -10,41 +12,20 @@ const expenseSlice = createSlice({
   name: 'expenses',
   initialState: initialValue,
   reducers: {
-    getExpensesStart: state => {
-      state.loading = true;
-      state.error = null;
+    addExpense: (state, action) => {
+      const newExpense = { id: uuidv4(), ...action.payload };
+      state.data = [...state.data, newExpense];
     },
-    getExpensesSuccess: (state, action) => {
-      state.loading = false;
-      state.error = null;
-      state.data = action.payload;
+    deleteExpense: (state, action) => {
+      const id = action.payload;
+      state.data = state.data.filter(expense => expense.id !== id);
     },
-    getExpensesFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
-
-    addExpensesStart: state => {
-      state.loading = true;
-      state.error = null;
-    },
-    addExpensesSuccess: (state, action) => {
-      state.loading = false;
-      state.data = action.payload;
-    },
-    addExpensesFailure: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+    editExpense: (state, action) => {
+      const { id, ...rest } = action.payload;
+      state.data[id] = { ...state.data[id], ...rest };
     }
   }
 });
 
-export const {
-  getExpensesStart,
-  getExpensesSuccess,
-  getExpensesFailure,
-  addExpensesStart,
-  addExpensesSuccess,
-  addExpensesFailure
-} = expenseSlice.actions;
+export const { addExpense, deleteExpense, editExpense } = expenseSlice.actions;
 export default expenseSlice.reducer;

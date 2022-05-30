@@ -59,7 +59,15 @@
   ],
   "rules": {
     "jsx-a11y/click-events-have-key-events": "warn",
-    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+
     "jsx-a11y/no-noninteractive-element-interactions": "warn",
     "jsx-quotes": ["error", "prefer-double"],
     "no-unused-vars": "warn",
