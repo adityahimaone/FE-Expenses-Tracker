@@ -68,6 +68,7 @@
     "react/prop-types": "warn",
     "semi": "error",
     "import/extensions": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "no-param-reassign": "off"
   }
 }
