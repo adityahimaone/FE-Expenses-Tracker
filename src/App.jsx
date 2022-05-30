@@ -2,7 +2,6 @@ import React from 'react';
 
 import Expenses from '@/components/elements/Expenses/Expense';
 import Layout from '@/components/layouts/DefaultLayout';
-import ButtonPrimary from '@/components/UI/Button/ButtonPrimary';
 
 function App() {
   const expenses = [
@@ -32,9 +31,7 @@ function App() {
       <div className="flex items-center justify-center rounded-lg bg-red-500 py-12 shadow-lg">
         <h1 className="text-3xl font-medium text-white">Expenses Calculator</h1>
       </div>
-      <div className="shadomax-w-lg my-4 flex items-center justify-center rounded-lg bg-slate-100 py-4">
-        <ButtonPrimary>Add New Expenses</ButtonPrimary>
-      </div>
+
       <div>
         <Expenses expenses={expenses} />
       </div>
