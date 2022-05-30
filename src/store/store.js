@@ -16,7 +16,7 @@ import expensesSlice from './expensesSlice';
 import storage from './storage';
 
 const reducers = combineReducers({
-  expenses: expensesSlice.reducer
+  expenses: expensesSlice
 });
 
 const persistConfig = {
