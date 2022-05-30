@@ -21,46 +21,47 @@ function ExpenseForm() {
     setForm({ ...form, [name]: value });
   };
 
-  const handleChangeDate = e => {
-    setForm({ ...form, date: new Date(e.target.value) });
-  };
-
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addExpense(form));
-    console.log(form);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
       <div className="flex flex-col">
-        <label htmlFor="Title">Title</label>
+        <label htmlFor="title">Title</label>
         <input
           onChange={handleChange}
+          id="title"
           name="title"
           type="text"
           className="rounded-lg p-1"
+          required
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="Amount">Amount</label>
+        <label htmlFor="amount">Amount</label>
         <input
           onChange={handleChange}
+          id="amount"
           name="amount"
           type="number"
           min="0"
           className="rounded-lg p-1"
+          required
         />
       </div>
       <div className="flex flex-col">
-        <label htmlFor="Date">Date</label>
+        <label htmlFor="date">Date</label>
         <input
           onChange={handleChange}
+          id="date"
           name="date"
           type="date"
           min="2020-01-01"
           max="2023-12-31"
           className="rounded-lg p-1"
+          required
         />
       </div>
       <div>

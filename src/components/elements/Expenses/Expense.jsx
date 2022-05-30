@@ -43,6 +43,7 @@ function Expenses({ expenses }) {
         {expensesData.map(expense => (
           <ExpensesItem
             key={expense.id}
+            id={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}

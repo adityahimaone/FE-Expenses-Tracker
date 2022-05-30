@@ -17,8 +17,8 @@ const expenseSlice = createSlice({
       state.data = [...state.data, newExpense];
     },
     deleteExpense: (state, action) => {
-      const { id } = action.payload;
-      delete state.data[id];
+      const id = action.payload;
+      state.data = state.data.filter(expense => expense.id !== id);
     },
     editExpense: (state, action) => {
       const { id, ...rest } = action.payload;
